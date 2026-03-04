@@ -1,0 +1,2 @@
+# Core Django app initialization
+

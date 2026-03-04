@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl focus:ring-indigo-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300 focus:ring-gray-400;
+  }
+  
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-200;
+  }
+  
+  /* Custom Scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+
+  /* Dark scrollbar */
+  .scrollbar-dark::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-dark::-webkit-scrollbar-track {
+    @apply bg-gray-900 rounded-full;
+  }
+  
+  .scrollbar-dark::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full hover:bg-gray-600;
+  }
+}
+
+@layer utilities {
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  /* Slide-up Animation */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  /* Slide-down Animation */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.2s ease-out;
+  }
+
+  /* Pulse slow Animation */
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-safe-height {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Touch optimization */
+  .touch-optimized {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  /* Text gradient */
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  }
+}

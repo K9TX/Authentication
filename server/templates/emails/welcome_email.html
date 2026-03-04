@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SecureAuth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4a5568;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            background-color: #f9fafb;
+            padding: 30px;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to SecureAuth! 🎉</h1>
+    </div>
+    
+    <div class="content">
+        <p>Hello {{ user.first_name|default:user.username }},</p>
+        
+        <p>Welcome to SecureAuth! Your account has been successfully created and verified.</p>
+        
+        <p>You now have access to our secure authentication platform with the following features:</p>
+        
+        <ul>
+            <li>Secure JWT-based authentication</li>
+            <li>Two-factor authentication support</li>
+            <li>OAuth2 integration (Google)</li>
+            <li>Email verification</li>
+            <li>Password reset functionality</li>
+        </ul>
+        
+        <p style="text-align: center;">
+            <a href="{{ login_url }}" class="button">Access Your Account</a>
+        </p>
+        
+        <p>If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
+        
+        <p>Best regards,<br>The SecureAuth Team</p>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 SecureAuth. All rights reserved.</p>
+        <p>This is an automated message. Please do not reply to this email.</p>
+    </div>
+</body>
+</html>
